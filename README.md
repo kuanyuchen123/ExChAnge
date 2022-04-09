@@ -6,7 +6,7 @@ A simple project for NCKU software engineer course
 Functionalities:
 * Signup
 * Login
-* Browse itmes
+* Browse items
 * Upload items
 * Exchange items
 # Usage
