@@ -186,29 +186,3 @@ def exchange(item_id, post_id):
         db.session.commit()
 
     return redirect(url_for('bag'))
-
-"""
-@app.route('/unpost_item/<int:item_id>', methods=['GET', 'POST'])
-@login_required
-def unpost_item(item_id):
-    item = Item.query.filter_by(item_id=item_id).first()
-    if item.item_status == 1 and current_user.id == item.item_owner_id :
-        # Set its candidate's status back to 0: no_status
-        candidate_items_id = [candidate.item_id for candidate in Candidate.query.filter_by(post_id=item.item_post_id)]
-        for id in candidate_items_id :
-            candidate_item = Item.query.filter_by(item_id=id).first()
-            candidate_item.item_status = 0
-
-        # Remove candidates of this item from the candidate table
-        Candidate.query.filter_by(post_id=item.item_post_id).delete()
-        # Remove post entry from post table
-        Post.query.filter_by(post_item_id=item_id).delete()
-        # Change status of item to 0: no_status
-        item.item_status = 0
-        # Remove post id from item
-        item.item_post_id = None
-
-        db.session.commit()
-
-    return redirect(url_for("bag"))
-"""
