@@ -10,7 +10,7 @@ Functionalities:
 * Upload items
 * Exchange items
 # Usuage
-Developed on Python 3.8
+Developed on Python 3.8 with Flask
 1. Download required packages with
 ```
 pip install -r requirements.txt
