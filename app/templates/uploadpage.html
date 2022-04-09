@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+<div class="uploadPage">
+    <div class="input_container" id="register">
+
+    <form class="form-upload-item" method="POST" action="/upload_item" enctype="multipart/form-data">
+        <div>
+          {{ form.csrf_token }}
+          <h2>上傳圖片</h2>
+          {{ wtf.form_field(form.image) }}
+          <h2>商品描述</h2>
+          {{ wtf.form_field(form.name) }}
+          <button class="btn" id="btn_upload" type="submit" value="upload">送出</button><br/>
+        </div>
+    </form>
+    </div>
+</div>
+{% endblock %}

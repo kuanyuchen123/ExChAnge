@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block styles %}
+<link href="{{url_for('.static', filename='/styles/login.css')}}" rel="stylesheet" />
+{% endblock %}
+
+{% block content %}
+
+<div id="body">
+    <div class="input_container" id="register">
+      <form class="form-signin" method="POST" action="/signup">
+        {{ form.csrf_token }}
+        <p >{{form.account.label(class="form-control-label") }} </p>
+        <p >{{form.account(class="form-control form-control-lg") }} </p><br /> </label
+        ><br />
+        <p >{{form.password.label(class="form-control-label") }} </p>
+        <p >{{form.password(class="form-control form-control-lg") }} </p><br /> </label
+        ><br />
+        <p >{{form.confirm.label(class="form-control-label") }} </p>
+        <p >{{form.confirm(class="form-control form-control-lg") }} </p><br /> </label
+        ><br />
+        <p>{{get_flashed_messages()[-1]}}</p>
+        {% for field, errors in form.errors.items() %}
+        <p>{{errors[-1]}}</p>
+        {% endfor %}
+        <div><button class="btn" id="btn_login" type="submit" value="register">註冊</button><br/></div><br /> 
+      </form>
+      <button class="btn_2" onclick="location.href='/login';">直接登入已有帳戶</button>
+    </div>
+  <div>
+ </body> 
+{% endblock %}
+

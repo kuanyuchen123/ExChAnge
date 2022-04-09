@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="item">
+  <!-- 商品列表 -->
+  <div class="alert alert-info" role="alert">
+  </div>
+  <h1>我的背包</h1>
+  {% if get_flashed_messages()[-1] == "success" %}
+  <script type="text/javascript">alert("交易成功!");</script>  
+  {% endif %}
+  <section>
+    {% if bag.count() == 0  %}
+    <p>你的背包是空的! 按擴充背包來新增物品!</p>
+    {% else %}
+    {% for item in bag %}
+    <div class="item">
+      <img class="item_img" src="{{url_for('.static', filename='/uploads/'+item.item_pic_filename)}}">
+      <p class="item_name">{{ item.item_name }}</p>
+      {% if item.item_status == 0 %}
+      <form method="GET" action="{{ url_for('post_item', item_id=item.item_id) }}">
+          <input class="btn" type="submit" name="post" value="上架">
+      </form>
+      <form method="GET" action="{{ url_for('delete_item', item_id=item.item_id) }}">
+        <input class="btn" type="submit" name="delete" value="刪除">
+      </form>
+      {% elif item.item_status == 1 %}
+      <form method="GET" action="{{ url_for('get_post_id', post_id=item.item_post_id, page='sel_cand') }}">
+        <input class="btn" type="submit" name="exchange" value="結標">
+        <!-- 按下結標要跳到 exchange.html-->
+      </form>
+      {% elif item.item_status == 2 %}
+      <input class="btn" type="submit" name="candidated" value="交易中">   
+      {% endif %}
+    </div>
+    {% endfor %}
+    {% endif %}
+  </section>
+  <button class="btn" onclick="location.href='/upload_item';">
+    擴充背包
+  </button>
+</div>
+{% endblock %}
