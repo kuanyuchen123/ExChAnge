@@ -9,7 +9,7 @@ Functionalities:
 * Browse itmes
 * Upload items
 * Exchange items
-# Usuage
+# Usage
 Developed on Python 3.8 with Flask
 1. Download required packages with
 ```
