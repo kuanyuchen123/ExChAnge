@@ -162,7 +162,7 @@ def select_candidate():
 def exchange(item_id, post_id):
     item = Item.query.filter_by(item_post_id=post_id).first()
     if item.item_owner_id == current_user.id:
-        # Set its candidate's status back to 0: no_status or 3: completed
+        # Set its candidate's status back to 0: no_status
         candidate_items_id = [candidate.item_id for candidate in Candidate.query.filter_by(post_id=item.item_post_id)]
         for id in candidate_items_id :
             candidate_item = Item.query.filter_by(item_id=id).first()
