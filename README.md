@@ -2,6 +2,7 @@
 Item exchange website
 # Description
 A simple project for NCKU software engineer course
+
 Functionalities:
 * Signup
 * Login
