@@ -19,3 +19,7 @@ pip install -r requirements.txt
 ```
 python run.py
 ```
+3. Open below link in browser
+```
+http://localhost:5000/
+```
