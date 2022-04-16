@@ -150,6 +150,9 @@ def add_candidate(item_id, post_id):
 @app.route('/select_candidate', methods=['GET', 'POST'])
 @login_required
 def select_candidate():
+    if current_user.id != Item.query.filter_by( item_post_id=request.args['post_id'] ).first().item_owner_id :
+        return redirect(url_for("index"))
+
     candidate_items_id = [candidate.item_id for candidate in Candidate.query.filter_by(post_id=request.args['post_id'])]
     items = []
     for id in candidate_items_id:
