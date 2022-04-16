@@ -1,5 +1,5 @@
 # ExChAnge
-Simple item exchange website
+Item exchange website
 
 Front-end built with Bootstrap, Back-end built with Flask
 # Description
