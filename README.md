@@ -1,9 +1,8 @@
 # ExChAnge
 Simple item exchange website
 
-Front-end developed with Bootstrap
-
-Back-end developed with Python 3.8 with Flask
+Front-end built with Bootstrap
+, Back-end built with Flask
 # Description
 A simple project for NCKU software engineer course
 
@@ -14,7 +13,7 @@ Functionalities:
 * Upload items
 * Exchange items
 # Usage
-Developed on Python 3.8 with Flask
+Developed on Python 3.8
 1. Download required packages with
 ```
 pip install -r requirements.txt
