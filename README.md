@@ -1,8 +1,7 @@
 # ExChAnge
 Simple item exchange website
 
-Front-end built with Bootstrap
-, Back-end built with Flask
+Front-end built with Bootstrap, Back-end built with Flask
 # Description
 A simple project for NCKU software engineer course
 
