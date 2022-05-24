@@ -10,9 +10,7 @@ Functionalities:
 * Upload items
 * Exchange items
 # Usage
-Developed on Python 3.8
-
-Front-end built with Bootstrap, Back-end built with Flask
+Developed on Python 3.8, Front-end built with Bootstrap, Back-end built with Flask
 
 1. Download required packages with
 ```
